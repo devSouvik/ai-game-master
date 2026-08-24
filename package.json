@@ -1,0 +1,22 @@
+{
+  "name": "ai-game-master",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI Game Master engine — text-based interactive fiction with LangGraph, Azure OpenAI, and Redis memory.",
+  "main": "dist/interfaces/cli/index.js",
+  "scripts": {
+    "dev": "tsx src/interfaces/cli/index.ts",
+    "build": "tsc",
+    "start": "node dist/interfaces/cli/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ioredis": "^5.4.1",
+    "openai": "^4.68.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  }
+}
