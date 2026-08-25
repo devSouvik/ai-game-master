@@ -20,6 +20,7 @@ export const rollDice = tool(
       { length: numDice },
       () => Math.floor(Math.random() * numSides) + 1
     );
+    console.log("I am being called");
     const total = rolls.reduce((a, b) => a + b, 0);
     // Tool results are always returned as text — JSON-stringifying lets the
     // model parse structure back out of the string.
@@ -55,6 +56,7 @@ export const rollDice = tool(
 export function createInventoryTools(store: SessionStore, sessionId: string) {
   const addItem = tool(
     async ({ item }: { item: string; }) => {
+      console.log("addItem tool is being called");
       const inventory = await store.addItem(sessionId, item);
       return `Added "${item}". Current inventory: ${inventory.join(", ") || "(empty)"}`;
     },
@@ -69,6 +71,7 @@ export function createInventoryTools(store: SessionStore, sessionId: string) {
 
   const removeItem = tool(
     async ({ item }: { item: string; }) => {
+      console.log("removeItem tool is being called");
       const { inventory, removed } = await store.removeItem(sessionId, item);
       return removed
         ? `Removed "${item}". Current inventory: ${inventory.join(", ") || "(empty)"}`
@@ -85,6 +88,7 @@ export function createInventoryTools(store: SessionStore, sessionId: string) {
 
   const listInventory = tool(
     async () => {
+      console.log("listInventory tool is being called");
       const inventory = await store.getInventory(sessionId);
       return inventory.length ? inventory.join(", ") : "(empty)";
     },

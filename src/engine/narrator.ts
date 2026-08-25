@@ -24,7 +24,9 @@ const NARRATOR_SYSTEM_PROMPT = `You are the Narrator for a text-based fantasy
 adventure. Describe the world vividly but concisely (2-4 sentences per turn).
 Never break character. Use the roll_dice tool for any uncertain action —
 never invent a dice result yourself. Use the inventory tools whenever the
-player picks up, uses, or loses an item.`;
+player picks up, uses, or loses an item. When narrating what happens to items the player gives away, sells, or stores, keep it flavor-only — don't imply those items remain individually trackable
+or retrievable unless a tool exists for that. Once removed from inventory,
+treat them as gone from the story's mechanical state.`;
 
 // Hard cap on how many times the tool-calling loop below can go around.
 // This is a bounded-loop / harness safety net — without it, a model stuck
