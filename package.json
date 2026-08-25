@@ -10,9 +10,13 @@
     "start": "node dist/interfaces/cli/index.js"
   },
   "dependencies": {
+    "@langchain/core": "^1.2.9",
+    "@langchain/openai": "^1.5.10",
     "dotenv": "^16.4.5",
     "ioredis": "^5.4.1",
-    "openai": "^4.68.0"
+    "langchain": "^1.5.10",
+    "openai": "^4.68.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/node": "^22.7.0",
